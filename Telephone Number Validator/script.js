@@ -3,11 +3,15 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const result = document.getElementById("results-div");
 
-const regNumRegex = /1 555-555-5555/;
-const parNumRegex = /1 \(555\) 555-5555/
-const sameNumRegex = /5555555555/;
+const regex1 = /^\d{1} \d{3}-\d{3}-\d{4}$/; //1 555-555-5555
+const regex2 = /^1\(\d{3}\)\d{3}-\d{4}$/; //1(555)555-5555
+const regex3 = /^\d{10}$/; //5555555555
+const regex4 = /^\d{3}-\d{3}-\d{4}$/; //555-555-5555
+const regex5 = /^\(\d{3}\)\d{3}-\d{4}$/; //(555)555-5555
+const regex6 = /^\d{1} \d{3} \d{3} \d{4}$/; //1 555 555 5555
+const regex7 = /^1 \(\d{3}\) \d{3}-\d{4}$/; //1 (555) 555-5555
 
-const validList = [regNumRegex, parNumRegex, sameNumRegex];
+const validList = [regex1, regex2, regex3, regex4, regex5, regex6, regex7];
 
 const isValid = nums => validList.some(regex => regex.test(nums));
 
