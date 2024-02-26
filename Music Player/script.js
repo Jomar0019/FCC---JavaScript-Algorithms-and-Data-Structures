@@ -184,7 +184,23 @@ const renderSongs = (array) => {
     })
     .join("")
     playlistSongs.innerHTML = songsHTML;
-}
+};
+
+const sortSongs = () => {
+    userData?.songs.sort((a,b) => {
+        if(a.title < b.title) {
+            return -1
+        }
+    
+        if(a.title > b.title) {
+            return 1
+        }
+    
+        return 0
+    });
+
+    return userData?.songs;
+};
 
 audio.addEventListener('ended', () => {
     const currentSongIndex = getCurrentSongIndex();
@@ -202,18 +218,6 @@ audio.addEventListener('ended', () => {
         setPlayButtonAccessibleText();
     }
 })
-
-userData?.songs.sort((a,b) => {
-    if(a.title < b.title) {
-        return -1
-    }
-
-    if(a.title > b.title) {
-        return 1
-    }
-
-    return 0
-});
 
 const setPlayButtonAccessibleText = () => {
     const song = userData?.currentSong || userData?.songs[0];
@@ -240,4 +244,4 @@ previousButton.addEventListener('click', playPreviousSong);
 
 shuffleButton.addEventListener('click', shuffle);
 
-renderSongs(userData?.songs)
+renderSongs(sortSongs());
