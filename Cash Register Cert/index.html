@@ -7,8 +7,77 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <h1>Cash Register</h1>
+    <div class="container">
+        <h1>Cash Register Project</h1>
+        <div class="customer">
+            <p>Enter Cash from Customer :</p>
+            <input type="text">
+        </div>
+        <div class="table">
+            <div class="receipt">
+                <div class="paper">
+                    <p>Status: <span class="open">OPEN</span></p>
+                    <p>TEN: $</p>
+                    <p>FIVE: $</p>
+                    <p>ONE: $</p>
+                    <p>QUARTER: $</p>
+                    <p>DIME: $</p>
+                    <P>PENNY: $</P>
+                </div>
+            </div>
+            
+            <div class="cashier-drawer">
+                <div class="mini-screen">
+                    <span>$ 3.26</span>
+                </div>
+                <div class="body">
+                    <div class="body-screen"></div>
+                    <div class="row r1">
+                        <div class="r-btn r1-btn"></div>
+                        <div class="r-btn r1-btn"></div>
+                        <div class="r-btn r1-btn"></div>
+                    </div>
+                    <div class="row r2">
+                        <div class="r-btn r2-btn"></div>
+                        <div class="r-btn r2-btn"></div>
+                        <div class="r-btn r2-btn"></div>
+                    </div>
+                    <div class="row r3">
+                        <div class="r-btn r3-btn"></div>
+                        <div class="r-btn r3-btn"></div>
+                        <div class="r-btn r3-btn"></div>
+                    </div>
+
+                    <div class="cash-out">
+                        <div class="cash"></div>
+                    </div>
+
+                    <div class="change">
+                        <h5>Change in drawer:</h5>
+                        <div class="drawer">
+                            <div>
+                                <p>Pennies: $</p>
+                                <p>Nickels: $</p>
+                                <p>Dimes: $</p>
+                                <p>Quarters: $</p>
+                                <p>Ones: $</p>
+                            </div>
+                            <div>
+                                <p>Fives: $</p>
+                                <p>Tens: $</p>
+                                <p>Twenties: $</p>
+                                <p>Hundreds: $</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="money-drawer"></div>
+            </div>
+
+           
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
