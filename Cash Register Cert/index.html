@@ -11,20 +11,21 @@
         <h1>Cash Register Project</h1>
         <div class="customer">
             <p>Enter Cash from Customer :</p>
-            <input type="text">
+            <input type="number" id="cash">
+            <button id="purchase-btn">Purchase</button>
         </div>
-        <div class="table">
-            <div class="receipt">
-                <div class="paper">
-                    <p>Status: <span class="open">OPEN</span></p>
-                    <p>TEN: $</p>
-                    <p>FIVE: $</p>
-                    <p>ONE: $</p>
-                    <p>QUARTER: $</p>
-                    <p>DIME: $</p>
-                    <P>PENNY: $</P>
-                </div>
-            </div>
+
+        <div class="receipt" id="change-due">
+            <!-- <div class="paper">
+                <p class="stats">Status: <span class="open">OPEN</span></p>
+                <p>TEN: $</p>
+                <p>FIVE: $</p>
+                <p>ONE: $</p>
+                <p>QUARTER: $</p>
+                <p>DIME: $</p>
+                <P>PENNY: $</P>
+            </div> -->
+        </div>
             
             <div class="cashier-drawer">
                 <div class="mini-screen">
@@ -74,9 +75,6 @@
                 </div>
                 <div class="money-drawer"></div>
             </div>
-
-           
-        </div>
     </div>
 
     <script src="script.js"></script>
