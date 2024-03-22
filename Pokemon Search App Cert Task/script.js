@@ -15,17 +15,17 @@ const pokemonSpecialDefense = document.getElementById("special-defense");
 const pokemonWeight = document.getElementById("weight");
 const pokemonHeight = document.getElementById("height");
 const pokemonSpeed = document.getElementById("speed");
+const cardImage = document.getElementById("card-image");
 
-const card = document.getElementById("card");
-
-const cardImage = document.getElementById("card-image")
+// CSS
+let card = document.getElementById("card");
+let borderImage = document.getElementById("card-image");
 
 const fetchData = async (name) => {
     try {
         const res = await fetch(pokemonAPI.concat(name));
         const data = await res.json();
-        showSearchPokemon(data);
-        console.log(data)
+        showSearchPokemon(data)
     } catch (err) {
         console.log(err)
         alert("Pokémon not found");
@@ -34,17 +34,23 @@ const fetchData = async (name) => {
 
 const showSearchPokemon = data => {
     const { name, id, sprites, types, height, weight, stats } = data;
-        
+
+    console.log(types[0].type.name)
+    card.classList.add(`${types[0].type.name}Border`)
+    borderImage.classList.add(`${types[0].type.name}Border`)
+
     pokemonName.textContent = name.toUpperCase();
     pokemonId.textContent = `#${id}`;
     cardImage.innerHTML = `
-    <img src=${sprites.front_default} alt="pokemon-img" id="sprite" class="pokemon-img">
+        <img src=${sprites.front_default} alt="pokemon-img" id="sprite" class="pokemon-img">
     `;
 
-    types.map(type => {
-        pokemonTypes.innerHTML = `<span class="type ${type.type.name}">${type.type.name.toUpperCase()}</span> `;
-    })
+    pokemonTypes.innerHTML = types.map(type => { 
+        return `
+            <span class="type ${type.type.name}">${type.type.name}</span>
+        `
 
+    }).join(" ")
 
     pokemonHp.textContent = `${stats[0].base_stat}HP`;
     pokemonWeight.innerHTML = `
@@ -75,13 +81,10 @@ const showSearchPokemon = data => {
         <p>Speed</p>
         <p class="stat">${stats[5].base_stat}</p>
     `;
-
 }
-
-
 
 searchButton.addEventListener('click', (e) => {
     e.preventDefault();
-    fetchData(searchInput.value);
+    fetchData(searchInput.value.toLowerCase());
     searchInput.value = "";
 })

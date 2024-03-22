@@ -29,6 +29,11 @@ body {
     text-align: center;
 }
 
+.pokemon-hp {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .search-input {
     width: 70%;
     display: block;
@@ -56,7 +61,7 @@ body {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    border: 15px solid #fee266;
+    border: 10px solid #fee266;
 }
 
 
@@ -127,3 +132,21 @@ body {
 .dark {background-color: #705746;} 
 .steel {background-color: #B7B7CE;} 
 .fairy {background-color: #D685AD;}
+
+.poisonBorder {border: 10px solid #A33EA1; background-color: white;}
+.grassBorder {border: 10px solid #7AC74C; background-color: white;}
+.fireBorder {border: 10px solid #EE8130; background-color: white;}
+.waterBorder {border: 10px solid #6390F0; background-color: white;}
+.electricBorder { border: 10px solid #F7D02C; background-color: white;}
+.iceBorder {border:  10px solid #96D9D6; background-color: white;} 
+.fightingBorder {border: 10px solid #C22E28; background-color: white;} 
+.groundBorder {border: 10px solid #E2BF65; background-color: white;} 
+.flyingBorder {border: 10px solid #A98FF3; background-color: white;} 
+.psychicBorder {border: 10px solid #F95587; background-color: white;} 
+.bugBorder {border: 10px solid #A6B91A; background-color: white;} 
+.rockBorder {border: 10px solid #B6A136; background-color: white;} 
+.ghostBorder {border: 10px solid #735797; background-color: white;} 
+.dragonBorder {border: 10px solid #6F35FC; background-color: white;} 
+.darkBorder {border: 10px solid #705746; background-color: white;} 
+.steelBorder {border: 10px solid #B7B7CE; background-color: white;} 
+.fairyBorder {border: 10px solid #D685AD; background-color: white;}
