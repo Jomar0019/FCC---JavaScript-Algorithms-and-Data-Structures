@@ -35,9 +35,8 @@ const fetchData = async (name) => {
 const showSearchPokemon = data => {
     const { name, id, sprites, types, height, weight, stats } = data;
 
-    console.log(types[0].type.name)
-    card.classList.add(`${types[0].type.name}Border`)
-    borderImage.classList.add(`${types[0].type.name}Border`)
+    // card.classList.add(`${types[0].type.name}Border`)
+    // borderImage.classList.add(`${types[0].type.name}Border`)
 
     pokemonName.textContent = name.toUpperCase();
     pokemonId.textContent = `#${id}`;
@@ -49,7 +48,6 @@ const showSearchPokemon = data => {
         return `
             <span class="type ${type.type.name}">${type.type.name}</span>
         `
-
     }).join(" ")
 
     pokemonHp.textContent = `${stats[0].base_stat}HP`;
