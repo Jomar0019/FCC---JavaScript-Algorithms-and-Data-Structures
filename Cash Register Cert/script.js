@@ -43,13 +43,14 @@ function handleClick() {
     const clonedCid = structuredClone(cid);
     const register = clonedCid.map((item) => [item[0], Math.round(item[1] * 100)]);
 
+
     cash = input.value;
     money = cash * 100;
 
     const changeDue = Number(cash - price);
 
     if (changeDue === 0) {
-        output.innerHTML = 'No change due - customer paid with exact cash';
+        output.textContent = 'No change due - customer paid with exact cash';
         return;
     } else if (changeDue < 0) {
         alert('Customer does not have enough money to purchase the item');
@@ -58,14 +59,16 @@ function handleClick() {
         const changeList = getChangeList(register, changeDue);
 
         if (changeDue > getTotalInRegister(register) || changeList.length === 0) {
-            output.innerHTML = `Status: ${statusTypes.INSUFFICIENT_FUNDS}`;
+            output.innerHTML = `<p>Status: <span class="INSUFFICIENT_FUNDS">INSUFFICIENT_FUNDS</span></p>`;
             return;
         }
 
-        output.innerHTML = `Status: ${statusType} ${changeList.join(' ')}`;
-
-        const expected = 'Status: CLOSED QUARTER: $0 DIME: $0 NICKEL: $0 PENNY: $0.5';
-        const actual =   output.innerHTML;
+        output.innerHTML = `
+            <div>
+                <p>Status: <span class="${statusType}">${statusType}</span></p>
+                ${changeList.map(cl => `<p>${cl}</p>`).join('')}
+            </div>
+        `;
     }
 }
 

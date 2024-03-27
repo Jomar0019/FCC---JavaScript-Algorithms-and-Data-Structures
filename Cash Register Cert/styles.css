@@ -252,3 +252,24 @@ body {
     grid-template-columns: 1fr 1fr;
     font-size: 14px;
 }
+
+.OPEN {
+    background-color: green;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.CLOSED {
+    background-color: red;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.INSUFFICIENT_FUNDS {
+    background-color: #37404b;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
