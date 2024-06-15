@@ -42,3 +42,9 @@ for (const row of rows) {
 }
 
 console.log(result);
+
+
+const person = {
+  name: "John",
+  age: 25
+};
